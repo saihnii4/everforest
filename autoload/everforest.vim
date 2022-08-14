@@ -26,6 +26,7 @@ function! everforest#get_configuration() "{{{
         \ 'disable_terminal_colors': get(g:, 'everforest_disable_terminal_colors', 0),
         \ 'better_performance': get(g:, 'everforest_better_performance', 0),
         \ 'colors_override': get(g:, 'everforest_colors_override', {}),
+        \ 'everforest_underline_error': get(g:, 'everforest_underline_error', 1)
         \ }
 endfunction "}}}
 function! everforest#get_palette(background, colors_override) "{{{

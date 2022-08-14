@@ -321,16 +321,19 @@ else
   call everforest#highlight('BlueSign', s:palette.blue, s:palette.bg1)
   call everforest#highlight('PurpleSign', s:palette.purple, s:palette.bg1)
 endif
+
+let s:error_text_style = s:configuration.everforest_underline_error ? 'undercurl' : 'NONE'
+
 if s:configuration.diagnostic_text_highlight
-  call everforest#highlight('ErrorText', s:palette.none, s:palette.bg_red, 'undercurl', s:palette.red)
-  call everforest#highlight('WarningText', s:palette.none, s:palette.bg_yellow, 'undercurl', s:palette.yellow)
-  call everforest#highlight('InfoText', s:palette.none, s:palette.bg_blue, 'undercurl', s:palette.blue)
-  call everforest#highlight('HintText', s:palette.none, s:palette.bg_green, 'undercurl', s:palette.green)
+  call everforest#highlight('ErrorText', s:palette.none, s:palette.bg_red, s:error_text_style, s:palette.red)
+  call everforest#highlight('WarningText', s:palette.none, s:palette.bg_yellow, s:error_text_style, s:palette.yellow)
+  call everforest#highlight('InfoText', s:palette.none, s:palette.bg_blue, s:error_text_style, s:palette.blue)
+  call everforest#highlight('HintText', s:palette.none, s:palette.bg_green, s:error_text_style, s:palette.green)
 else
-  call everforest#highlight('ErrorText', s:palette.none, s:palette.none, 'undercurl', s:palette.red)
-  call everforest#highlight('WarningText', s:palette.none, s:palette.none, 'undercurl', s:palette.yellow)
-  call everforest#highlight('InfoText', s:palette.none, s:palette.none, 'undercurl', s:palette.blue)
-  call everforest#highlight('HintText', s:palette.none, s:palette.none, 'undercurl', s:palette.green)
+  call everforest#highlight('ErrorText', s:palette.none, s:palette.none, s:error_text_style, s:palette.red)
+  call everforest#highlight('WarningText', s:palette.none, s:palette.none, s:error_text_style, s:palette.yellow)
+  call everforest#highlight('InfoText', s:palette.none, s:palette.none, s:error_text_style, s:palette.blue)
+  call everforest#highlight('HintText', s:palette.none, s:palette.none, s:error_text_style, s:palette.green)
 endif
 if s:configuration.diagnostic_line_highlight
   call everforest#highlight('ErrorLine', s:palette.none, s:palette.bg_red)
