@@ -1638,46 +1638,35 @@ highlight! link lessFunction Yellow
 " syn_begin: javascript/javascriptreact {{{
 " builtin: http://www.fleiner.com/vim/syntax/javascript.vim {{{
 highlight! link javaScriptNull Aqua
+highlight! link javaScriptNumber Number
 highlight! link javaScriptIdentifier Orange
-highlight! link javaScriptParens Fg
-highlight! link javaScriptBraces Fg
 highlight! link javaScriptGlobal Purple
 highlight! link javaScriptMessage Yellow
-highlight! link javaScriptFunction RedItalic
+highlight! link javaScriptFunction Keyword
 highlight! link javaScriptOperator Orange
 highlight! link javaScriptMember Aqua
 " }}}
 " vim-javascript: https://github.com/pangloss/vim-javascript {{{
+highlight! link jsString Aqua
 highlight! link jsThis Purple
 highlight! link jsUndefined Aqua
 highlight! link jsNull Aqua
 highlight! link jsNan Aqua
 highlight! link jsSuper Purple
 highlight! link jsPrototype Purple
-highlight! link jsFunction RedItalic
-highlight! link jsGlobalNodeObjects PurpleItalic
+highlight! link jsFunction Keyword
+highlight! link jsGlobalNodeObjects Include
 highlight! link jsGlobalObjects Yellow
 highlight! link jsArrowFunction Purple
 highlight! link jsArrowFuncArgs Blue
-highlight! link jsFuncArgs Blue
-highlight! link jsObjectProp Aqua
-highlight! link jsVariableDef Blue
-highlight! link jsObjectKey Aqua
-highlight! link jsParen Blue
-highlight! link jsParenIfElse Blue
-highlight! link jsParenRepeat Blue
-highlight! link jsParenSwitch Blue
-highlight! link jsParenCatch Blue
-highlight! link jsBracket Blue
+highlight! link jsFuncArgs Identifier
 highlight! link jsBlockLabel Aqua
-highlight! link jsFunctionKey Green
-highlight! link jsClassDefinition Yellow
+highlight! link jsClassDefinition Type
+highlight! link jsClassStringKey Aqua
 highlight! link jsDot Grey
+highlight! link jsObjectColon Grey
 highlight! link jsDestructuringBlock Blue
-highlight! link jsSpreadExpression Purple
-highlight! link jsSpreadOperator Green
 highlight! link jsModuleKeyword Yellow
-highlight! link jsObjectValue Blue
 highlight! link jsTemplateExpression Yellow
 highlight! link jsTemplateBraces Yellow
 highlight! link jsClassMethodType Orange
@@ -1686,9 +1675,8 @@ highlight! link jsClassMethodType Orange
 highlight! link javascriptEndColons Fg
 highlight! link javascriptOpSymbol Orange
 highlight! link javascriptOpSymbols Orange
-highlight! link javascriptIdentifierName Blue
 highlight! link javascriptVariable Orange
-highlight! link javascriptObjectLabel Aqua
+highlight! link javascriptObjectLabel Fg
 highlight! link javascriptObjectLabelColon Grey
 highlight! link javascriptPropertyNameString Aqua
 highlight! link javascriptFuncArg Blue
@@ -2185,18 +2173,26 @@ highlight! link scalaKeywordModifier Orange
 " }}}
 " syn_end }}}
 " syn_begin: go {{{
-" builtin: https://github.com/google/vim-ft-go {{{
-highlight! link goDirective PurpleItalic
-highlight! link goConstants Aqua
+" builtin: https://github.com/fatih/vim-go {{{
+highlight! link goPackage Define
+highlight! link goImport Include
+highlight! link goVar OrangeItalic
+highlight! link goConst goVar
+highlight! link goType Yellow
+highlight! link goSignedInts goType
+highlight! link goUnsignedInts goType
+highlight! link goFloats goType
+highlight! link goComplexes goType
+highlight! link goVarDefs Aqua
 highlight! link goDeclType OrangeItalic
-" }}}
-" polyglot: {{{
-highlight! link goPackage PurpleItalic
-highlight! link goImport PurpleItalic
-highlight! link goVarArgs Blue
-highlight! link goBuiltins Green
+highlight! link goFunctionCall Function
 highlight! link goPredefinedIdentifiers Aqua
-highlight! link goVar Orange
+highlight! link goBuiltins Function
+highlight! link goVarArgs Grey
+highlight! link goTSInclude Purple
+highlight! link goTSNamespace Fg
+highlight! link goTSProperty Identifier
+highlight! link goTSConstBuiltin AquaItalic
 " }}}
 " syn_end }}}
 " syn_begin: rust {{{
@@ -2581,10 +2577,15 @@ highlight! link jsonTSLabel jsonKeyword
 highlight! link jsonTSString jsonString
 " syn_end }}}
 " syn_begin: yaml {{{
-highlight! link yamlKey Green
-highlight! link yamlConstant Purple
-highlight! link yamlTSField Green
-highlight! link yamlTSString Fg
+highlight! link yamlBlockMappingKey Green
+highlight! link yamlString Fg
+highlight! link yamlConstant OrangeItalic
+highlight! link yamlKeyValueDelimiter Grey
+highlight! link yamlTSField yamlBlockMappingKey
+highlight! link yamlTSString yamlString
+highlight! link yamlTSBoolean yamlConstant
+highlight! link yamlTSConstBuiltin yamlConstant
+highlight! link yamlKey yamlBlockMappingKey  " stephpy/vim-yaml
 " syn_end }}}
 " syn_begin: toml {{{
 call everforest#highlight('tomlTable', s:palette.orange, s:palette.none, 'bold')
