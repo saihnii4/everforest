@@ -1299,8 +1299,10 @@ highlight! link LspSagaErrorTrunCateLine LspSagaDiagnosticError
 highlight! link LspSagaWarnTrunCateLine LspSagaDiagnosticWarn
 highlight! link LspSagaInfoTrunCateLine LspSagaDiagnosticInfo
 highlight! link LspSagaHintTrunCateLine LspSagaDiagnosticHint
-highlight! link LspSagaDiagnosticSource Orange
-highlight! link LspSagaDiagnosticBorder Orange
+" highlight! link LspSagaDiagnosticSource Orange
+" highlight! link LspSagaDiagnosticBorder Orange
+" highlight! link LspSagaDiagnosticBorder Orange (certified bruh)
+highlight! link LspSagaDiagnosticTruncateLine Orange
 highlight! link LspSagaRenameBorder Purple
 highlight! link LspSagaRenamePromptPrefix Blue
 highlight! link LspSagaCodeActionBorder Purple
