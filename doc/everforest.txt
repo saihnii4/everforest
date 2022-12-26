@@ -22,7 +22,7 @@ Note: Type |gO| in neovim to show the outline of contents.
 ==============================================================================
 INTRODUCTION                                           *everforest-introduction*
 
-Everforest is a green based color scheme, it's designed to be warm and soft
+Everforest is a green based color scheme; it's designed to be warm and soft
 in order to protect developers' eyes.
 
 Features~
@@ -263,6 +263,16 @@ background), set this option to `2`.
     Default value:      `0`
 
 ------------------------------------------------------------------------------
+                                             *g:everforest_dim_inactive_windows*
+g:everforest_dim_inactive_windows~
+
+Dim inactive windows. Only works in neovim currently.
+
+    Type:               |Number|
+    Available values:   `0`, `1`
+    Default value:      `0`
+
+------------------------------------------------------------------------------
                                            *g:everforest_sign_column_background*
 g:everforest_sign_column_background~
 
@@ -365,6 +375,7 @@ Currently, the following plugins are supported:
 - https://github.com/prabirshrestha/vim-lsp
 - https://github.com/dense-analysis/ale
 - https://github.com/neomake/neomake
+- https://github.com/ycm-core/YouCompleteMe
 
 ------------------------------------------------------------------------------
                                                      *g:everforest_current_word*
@@ -448,8 +459,8 @@ FAQ                                                             *everforest-faq*
 The colors don't match those in the screenshots.~
 
 1. This color scheme is mainly designed for true colors, `set termguicolors`
-is required. Check output of `vim --version`, maybe your vim doesn't support
-`termguicolors`.
+is required. Check output of `vim --version`, maybe your Vim doesn't support
+`termguicolors`, such as the Vim version that comes with macOS.
 
 2. Maybe your terminal emulator doesn't support true colors, you can test it
 using [this script](https://unix.stackexchange.com/questions/404414/print-true-color-24-bit-test-pattern).
