@@ -157,18 +157,18 @@ else
   call everforest#highlight('SpellLocal', s:palette.aqua, s:palette.none, 'undercurl', s:palette.aqua)
   call everforest#highlight('SpellRare', s:palette.purple, s:palette.none, 'undercurl', s:palette.purple)
 endif
-if s:configuration.transparent_background == 2
+if s:configuration.transparent_background == 1
   call everforest#highlight('StatusLine', s:palette.grey1, s:palette.none)
   call everforest#highlight('StatusLineTerm', s:palette.grey1, s:palette.none)
-  call everforest#highlight('StatusLineNC', s:palette.grey0, s:palette.none)
-  call everforest#highlight('StatusLineTermNC', s:palette.grey0, s:palette.none)
-  call everforest#highlight('TabLine', s:palette.grey2, s:palette.bg3)
-  call everforest#highlight('TabLineFill', s:palette.grey1, s:palette.none)
-  call everforest#highlight('TabLineSel', s:palette.bg0, s:palette.statusline1)
   if has('nvim')
     call everforest#highlight('WinBar', s:palette.grey1, s:palette.none, 'bold')
     call everforest#highlight('WinBarNC', s:palette.grey0, s:palette.none)
   endif
+  call everforest#highlight('StatusLineNC', s:palette.grey1, s:palette.none)
+  call everforest#highlight('StatusLineTermNC', s:palette.grey1, s:palette.none)
+  call everforest#highlight('TabLine', s:palette.grey2, s:palette.none)
+  call everforest#highlight('TabLineFill', s:palette.grey1, s:palette.none)
+  call everforest#highlight('TabLineSel', s:palette.statusline1, s:palette.bg0)
 else
   call everforest#highlight('StatusLine', s:palette.grey1, s:palette.bg2)
   call everforest#highlight('StatusLineTerm', s:palette.grey1, s:palette.bg1)
